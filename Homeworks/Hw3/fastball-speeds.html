@@ -1,0 +1,1334 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='C:/Users/chessa015/Documents/R/win-library/3.1/rCharts/libraries/nvd3/css/nv.d3.css'>
+    <link rel='stylesheet' href='C:/Users/chessa015/Documents/R/win-library/3.1/rCharts/libraries/nvd3/css/rNVD3.css'>
+    
+    <script src='C:/Users/chessa015/Documents/R/win-library/3.1/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js' type='text/javascript'></script>
+    <script src='C:/Users/chessa015/Documents/R/win-library/3.1/rCharts/libraries/nvd3/js/d3.v3.min.js' type='text/javascript'></script>
+    <script src='C:/Users/chessa015/Documents/R/win-library/3.1/rCharts/libraries/nvd3/js/nv.d3.min-new.js' type='text/javascript'></script>
+    <script src='C:/Users/chessa015/Documents/R/win-library/3.1/rCharts/libraries/nvd3/js/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart1900578d318e' class = 'rChart nvd3'></div>    
+    <script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart1900578d318e()
+    });
+    function drawchart1900578d318e(){  
+      var opts = {
+ "dom": "chart1900578d318e",
+"width":    800,
+"height":    400,
+"x": "date",
+"y": "avg_speed",
+"group": "pitcher",
+"type": "lineChart",
+"title": "Phillies Average Fastball Speeds in 2013",
+"id": "chart1900578d318e" 
+},
+        data = [
+ {
+ "pitcher": "Burnett",
+"date":          15796,
+"num": 55,
+"avg_speed": 92.69454545455,
+"se_speed": 0.134800468128 
+},
+{
+ "pitcher": "Burnett",
+"date":          15801,
+"num": 44,
+"avg_speed": 92.87272727273,
+"se_speed": 0.2140756133918 
+},
+{
+ "pitcher": "Burnett",
+"date":          15807,
+"num": 51,
+"avg_speed": 92.11960784314,
+"se_speed": 0.09143816544928 
+},
+{
+ "pitcher": "Burnett",
+"date":          15812,
+"num": 47,
+"avg_speed": 92.18723404255,
+"se_speed": 0.1633545493703 
+},
+{
+ "pitcher": "Burnett",
+"date":          15817,
+"num": 34,
+"avg_speed": 92.08823529412,
+"se_speed": 0.2023817498044 
+},
+{
+ "pitcher": "Burnett",
+"date":          15822,
+"num": 36,
+"avg_speed": 91.25277777778,
+"se_speed": 0.1861253252094 
+},
+{
+ "pitcher": "Burnett",
+"date":          15828,
+"num": 47,
+"avg_speed": 92.07872340426,
+"se_speed": 0.1703763090367 
+},
+{
+ "pitcher": "Burnett",
+"date":          15833,
+"num": 50,
+"avg_speed":         91.888,
+"se_speed": 0.1670302428928 
+},
+{
+ "pitcher": "Burnett",
+"date":          15838,
+"num": 29,
+"avg_speed": 91.63448275862,
+"se_speed": 0.2280391819926 
+},
+{
+ "pitcher": "Burnett",
+"date":          15843,
+"num": 42,
+"avg_speed": 92.44523809524,
+"se_speed": 0.1841325325903 
+},
+{
+ "pitcher": "Burnett",
+"date":          15849,
+"num": 61,
+"avg_speed": 92.15573770492,
+"se_speed": 0.1921907720012 
+},
+{
+ "pitcher": "Burnett",
+"date":          15854,
+"num": 55,
+"avg_speed": 92.35454545455,
+"se_speed": 0.1874661483573 
+},
+{
+ "pitcher": "Burnett",
+"date":          15859,
+"num": 52,
+"avg_speed": 92.31730769231,
+"se_speed": 0.1445000001004 
+},
+{
+ "pitcher": "Burnett",
+"date":          15864,
+"num": 34,
+"avg_speed": 91.67352941176,
+"se_speed": 0.1414408175731 
+},
+{
+ "pitcher": "Burnett",
+"date":          15893,
+"num": 20,
+"avg_speed":         92.225,
+"se_speed": 0.2442900562425 
+},
+{
+ "pitcher": "Burnett",
+"date":          15899,
+"num": 51,
+"avg_speed": 92.73725490196,
+"se_speed": 0.1858728383434 
+},
+{
+ "pitcher": "Burnett",
+"date":          15906,
+"num": 60,
+"avg_speed": 92.23333333333,
+"se_speed":  0.12797127738 
+},
+{
+ "pitcher": "Burnett",
+"date":          15911,
+"num": 42,
+"avg_speed": 92.85238095238,
+"se_speed": 0.1548757733513 
+},
+{
+ "pitcher": "Burnett",
+"date":          15916,
+"num": 75,
+"avg_speed": 92.70133333333,
+"se_speed": 0.1316765533978 
+},
+{
+ "pitcher": "Burnett",
+"date":          15921,
+"num": 50,
+"avg_speed":         92.824,
+"se_speed": 0.1444358483401 
+},
+{
+ "pitcher": "Burnett",
+"date":          15927,
+"num": 65,
+"avg_speed": 91.77230769231,
+"se_speed": 0.1688978368421 
+},
+{
+ "pitcher": "Burnett",
+"date":          15932,
+"num": 20,
+"avg_speed":          92.87,
+"se_speed": 0.2184996687942 
+},
+{
+ "pitcher": "Burnett",
+"date":          15937,
+"num": 52,
+"avg_speed": 92.38461538462,
+"se_speed": 0.1533532829024 
+},
+{
+ "pitcher": "Burnett",
+"date":          15942,
+"num": 44,
+"avg_speed": 92.75681818182,
+"se_speed": 0.1428492059381 
+},
+{
+ "pitcher": "Burnett",
+"date":          15948,
+"num": 51,
+"avg_speed": 92.78039215686,
+"se_speed": 0.1599269344896 
+},
+{
+ "pitcher": "Burnett",
+"date":          15954,
+"num": 42,
+"avg_speed": 94.15238095238,
+"se_speed": 0.1882814908729 
+},
+{
+ "pitcher": "Burnett",
+"date":          15959,
+"num": 52,
+"avg_speed": 93.30961538462,
+"se_speed": 0.1708875688925 
+},
+{
+ "pitcher": "Burnett",
+"date":          15964,
+"num": 52,
+"avg_speed": 92.33846153846,
+"se_speed": 0.1647053643935 
+},
+{
+ "pitcher": "Burnett",
+"date":          15969,
+"num": 39,
+"avg_speed": 93.20512820513,
+"se_speed": 0.1978613289791 
+},
+{
+ "pitcher": "Burnett",
+"date":          15975,
+"num": 44,
+"avg_speed": 92.06363636364,
+"se_speed": 0.1325905055725 
+},
+{
+ "pitcher": "Burnett",
+"date":          15981,
+"num": 28,
+"avg_speed": 93.76071428571,
+"se_speed": 0.1414530869672 
+},
+{
+ "pitcher": "Lee",
+"date":          15799,
+"num": 65,
+"avg_speed":          90.42,
+"se_speed": 0.08950182636727 
+},
+{
+ "pitcher": "Lee",
+"date":          15804,
+"num": 61,
+"avg_speed": 89.88032786885,
+"se_speed": 0.08764744554805 
+},
+{
+ "pitcher": "Lee",
+"date":          15810,
+"num": 55,
+"avg_speed":           90.7,
+"se_speed": 0.1045110468925 
+},
+{
+ "pitcher": "Lee",
+"date":          15815,
+"num": 67,
+"avg_speed": 89.79402985075,
+"se_speed": 0.1075166958102 
+},
+{
+ "pitcher": "Lee",
+"date":          15820,
+"num": 74,
+"avg_speed": 89.49864864865,
+"se_speed": 0.08486968129766 
+},
+{
+ "pitcher": "Lee",
+"date":          15826,
+"num": 48,
+"avg_speed": 90.90208333333,
+"se_speed": 0.1528537515267 
+},
+{
+ "pitcher": "Lee",
+"date":          15831,
+"num": 63,
+"avg_speed": 90.88412698413,
+"se_speed": 0.09568804786857 
+},
+{
+ "pitcher": "Lee",
+"date":          15836,
+"num": 62,
+"avg_speed": 90.69838709677,
+"se_speed": 0.1182118654679 
+},
+{
+ "pitcher": "Lee",
+"date":          15842,
+"num": 66,
+"avg_speed": 90.79848484848,
+"se_speed": 0.1009394663677 
+},
+{
+ "pitcher": "Lee",
+"date":          15847,
+"num": 56,
+"avg_speed": 91.11964285714,
+"se_speed": 0.1434821958921 
+},
+{
+ "pitcher": "Lee",
+"date":          15853,
+"num": 51,
+"avg_speed": 90.95490196078,
+"se_speed": 0.1059897784746 
+},
+{
+ "pitcher": "Lee",
+"date":          15858,
+"num": 73,
+"avg_speed": 91.47534246575,
+"se_speed": 0.09944252567654 
+},
+{
+ "pitcher": "Lee",
+"date":          15863,
+"num": 68,
+"avg_speed": 91.00735294118,
+"se_speed": 0.09738269719174 
+},
+{
+ "pitcher": "Lee",
+"date":          15869,
+"num": 59,
+"avg_speed": 90.96610169492,
+"se_speed": 0.1176829232458 
+},
+{
+ "pitcher": "Lee",
+"date":          15874,
+"num": 68,
+"avg_speed": 91.29852941176,
+"se_speed": 0.09078461633467 
+},
+{
+ "pitcher": "Lee",
+"date":          15880,
+"num": 60,
+"avg_speed": 90.47666666667,
+"se_speed": 0.09538404877561 
+},
+{
+ "pitcher": "Lee",
+"date":          15885,
+"num": 68,
+"avg_speed": 90.71911764706,
+"se_speed": 0.1180998475075 
+},
+{
+ "pitcher": "Lee",
+"date":          15891,
+"num": 48,
+"avg_speed": 91.22291666667,
+"se_speed": 0.1451106078298 
+},
+{
+ "pitcher": "Lee",
+"date":          15896,
+"num": 47,
+"avg_speed": 91.67872340426,
+"se_speed": 0.1100809629811 
+},
+{
+ "pitcher": "Lee",
+"date":          15902,
+"num": 11,
+"avg_speed": 90.25454545455,
+"se_speed": 0.1770278028311 
+},
+{
+ "pitcher": "Lee",
+"date":          15907,
+"num": 67,
+"avg_speed": 90.09402985075,
+"se_speed": 0.1076007957188 
+},
+{
+ "pitcher": "Lee",
+"date":          15921,
+"num": 57,
+"avg_speed": 90.65263157895,
+"se_speed": 0.09108456999935 
+},
+{
+ "pitcher": "Lee",
+"date":          15927,
+"num": 50,
+"avg_speed":          90.21,
+"se_speed": 0.1249081295046 
+},
+{
+ "pitcher": "Lee",
+"date":          15933,
+"num": 57,
+"avg_speed": 91.06666666667,
+"se_speed": 0.08522906380235 
+},
+{
+ "pitcher": "Lee",
+"date":          15938,
+"num": 53,
+"avg_speed": 90.18867924528,
+"se_speed": 0.1487407319833 
+},
+{
+ "pitcher": "Lee",
+"date":          15943,
+"num": 58,
+"avg_speed": 89.42068965517,
+"se_speed": 0.1034422260784 
+},
+{
+ "pitcher": "Lee",
+"date":          15948,
+"num": 55,
+"avg_speed": 89.41818181818,
+"se_speed": 0.0907540765923 
+},
+{
+ "pitcher": "Lee",
+"date":          15954,
+"num": 41,
+"avg_speed": 90.34634146341,
+"se_speed": 0.1201166892496 
+},
+{
+ "pitcher": "Lee",
+"date":          15959,
+"num": 45,
+"avg_speed": 90.25555555556,
+"se_speed": 0.1261534881855 
+},
+{
+ "pitcher": "Lee",
+"date":          15964,
+"num": 54,
+"avg_speed": 90.59259259259,
+"se_speed": 0.1140344527197 
+},
+{
+ "pitcher": "Lee",
+"date":          15970,
+"num": 48,
+"avg_speed": 90.63333333333,
+"se_speed": 0.110540794006 
+},
+{
+ "pitcher": "Lee",
+"date":          15975,
+"num": 47,
+"avg_speed": 91.25744680851,
+"se_speed": 0.1111600874426 
+},
+{
+ "pitcher": "Williams",
+"date":          15802,
+"num": 5,
+"avg_speed":          92.92,
+"se_speed": 0.1655294535725 
+},
+{
+ "pitcher": "Williams",
+"date":          15805,
+"num": 5,
+"avg_speed":          92.86,
+"se_speed": 0.4388621651498 
+},
+{
+ "pitcher": "Williams",
+"date":          15806,
+"num": 3,
+"avg_speed": 92.06666666667,
+"se_speed": 0.1452966314514 
+},
+{
+ "pitcher": "Williams",
+"date":          15811,
+"num": 21,
+"avg_speed":  92.2619047619,
+"se_speed": 0.1464624428498 
+},
+{
+ "pitcher": "Williams",
+"date":          15816,
+"num": 7,
+"avg_speed": 92.94285714286,
+"se_speed": 0.3531202026945 
+},
+{
+ "pitcher": "Williams",
+"date":          15819,
+"num": 7,
+"avg_speed": 93.04285714286,
+"se_speed": 0.160144492579 
+},
+{
+ "pitcher": "Williams",
+"date":          15822,
+"num": 3,
+"avg_speed":           93.6,
+"se_speed": 0.1527525231652 
+},
+{
+ "pitcher": "Williams",
+"date":          15824,
+"num": 13,
+"avg_speed": 93.23076923077,
+"se_speed": 0.1388527237596 
+},
+{
+ "pitcher": "Williams",
+"date":          15830,
+"num": 12,
+"avg_speed": 92.63333333333,
+"se_speed": 0.3035979531745 
+},
+{
+ "pitcher": "Williams",
+"date":          15836,
+"num": 14,
+"avg_speed": 92.06428571429,
+"se_speed": 0.3216726789796 
+},
+{
+ "pitcher": "Williams",
+"date":          15841,
+"num": 21,
+"avg_speed":           93.3,
+"se_speed": 0.2171240593367 
+},
+{
+ "pitcher": "Williams",
+"date":          15846,
+"num": 20,
+"avg_speed":         92.365,
+"se_speed": 0.221035243677 
+},
+{
+ "pitcher": "Williams",
+"date":          15851,
+"num": 17,
+"avg_speed": 92.05294117647,
+"se_speed": 0.3711189011009 
+},
+{
+ "pitcher": "Williams",
+"date":          15857,
+"num": 19,
+"avg_speed": 92.55789473684,
+"se_speed": 0.1296228874531 
+},
+{
+ "pitcher": "Williams",
+"date":          15861,
+"num": 1,
+"avg_speed":           91.6,
+"se_speed": null 
+},
+{
+ "pitcher": "Williams",
+"date":          15864,
+"num": 17,
+"avg_speed": 92.82941176471,
+"se_speed": 0.1538153748823 
+},
+{
+ "pitcher": "Williams",
+"date":          15868,
+"num": 21,
+"avg_speed": 91.51428571429,
+"se_speed": 0.1971566592822 
+},
+{
+ "pitcher": "Williams",
+"date":          15872,
+"num": 7,
+"avg_speed": 92.84285714286,
+"se_speed": 0.09476070829587 
+},
+{
+ "pitcher": "Williams",
+"date":          15878,
+"num": 15,
+"avg_speed": 93.59333333333,
+"se_speed": 0.1088759305539 
+},
+{
+ "pitcher": "Williams",
+"date":          15884,
+"num": 42,
+"avg_speed": 92.38095238095,
+"se_speed": 0.1619867251712 
+},
+{
+ "pitcher": "Williams",
+"date":          15889,
+"num": 4,
+"avg_speed":           92.5,
+"se_speed": 0.8396427811873 
+},
+{
+ "pitcher": "Williams",
+"date":          15892,
+"num": 4,
+"avg_speed":         92.375,
+"se_speed": 0.7972609359551 
+},
+{
+ "pitcher": "Williams",
+"date":          15898,
+"num": 8,
+"avg_speed":        92.4375,
+"se_speed": 0.1546164609607 
+},
+{
+ "pitcher": "Williams",
+"date":          15907,
+"num": 20,
+"avg_speed":         92.445,
+"se_speed": 0.1870090062565 
+},
+{
+ "pitcher": "Williams",
+"date":          15912,
+"num": 9,
+"avg_speed": 90.85555555556,
+"se_speed": 0.352022375832 
+},
+{
+ "pitcher": "Williams",
+"date":          15917,
+"num": 31,
+"avg_speed": 92.42258064516,
+"se_speed": 0.1649835232842 
+},
+{
+ "pitcher": "Williams",
+"date":          15922,
+"num": 12,
+"avg_speed":         92.925,
+"se_speed": 0.2582355631214 
+},
+{
+ "pitcher": "Williams",
+"date":          15928,
+"num": 18,
+"avg_speed": 92.23333333333,
+"se_speed": 0.3071053980154 
+},
+{
+ "pitcher": "Williams",
+"date":          15933,
+"num": 12,
+"avg_speed":          92.65,
+"se_speed": 0.3073592311444 
+},
+{
+ "pitcher": "Williams",
+"date":          15938,
+"num": 6,
+"avg_speed": 92.11666666667,
+"se_speed": 0.5810431232801 
+},
+{
+ "pitcher": "Williams",
+"date":          15945,
+"num": 11,
+"avg_speed": 91.65454545455,
+"se_speed": 0.2580921739378 
+},
+{
+ "pitcher": "Williams",
+"date":          15948,
+"num": 10,
+"avg_speed":          91.86,
+"se_speed": 0.211450020362 
+},
+{
+ "pitcher": "Williams",
+"date":          15953,
+"num": 18,
+"avg_speed": 92.53888888889,
+"se_speed": 0.1698016699474 
+},
+{
+ "pitcher": "Williams",
+"date":          15958,
+"num": 41,
+"avg_speed": 92.36585365854,
+"se_speed": 0.1293327036951 
+},
+{
+ "pitcher": "Williams",
+"date":          15963,
+"num": 30,
+"avg_speed": 91.05666666667,
+"se_speed": 0.1521254271773 
+},
+{
+ "pitcher": "Williams",
+"date":          15969,
+"num": 4,
+"avg_speed":         91.925,
+"se_speed": 0.3326033673913 
+},
+{
+ "pitcher": "Williams",
+"date":          15974,
+"num": 16,
+"avg_speed":        91.4625,
+"se_speed": 0.2476346435107 
+},
+{
+ "pitcher": "Hamels",
+"date":          15796,
+"num": 44,
+"avg_speed": 91.97045454545,
+"se_speed": 0.1688657455358 
+},
+{
+ "pitcher": "Hamels",
+"date":          15802,
+"num": 50,
+"avg_speed":         90.658,
+"se_speed": 0.1980741976006 
+},
+{
+ "pitcher": "Hamels",
+"date":          15808,
+"num": 55,
+"avg_speed": 90.72363636364,
+"se_speed": 0.1720340510567 
+},
+{
+ "pitcher": "Hamels",
+"date":          15813,
+"num": 60,
+"avg_speed":         91.245,
+"se_speed": 0.1734727546624 
+},
+{
+ "pitcher": "Hamels",
+"date":          15818,
+"num": 51,
+"avg_speed": 91.27254901961,
+"se_speed": 0.1761255886893 
+},
+{
+ "pitcher": "Hamels",
+"date":          15823,
+"num": 61,
+"avg_speed": 91.24098360656,
+"se_speed": 0.2324539680523 
+},
+{
+ "pitcher": "Hamels",
+"date":          15829,
+"num": 54,
+"avg_speed": 92.00185185185,
+"se_speed": 0.171451051027 
+},
+{
+ "pitcher": "Hamels",
+"date":          15834,
+"num": 49,
+"avg_speed":  91.2612244898,
+"se_speed": 0.1886177866567 
+},
+{
+ "pitcher": "Hamels",
+"date":          15840,
+"num": 55,
+"avg_speed": 91.29636363636,
+"se_speed": 0.1981048873017 
+},
+{
+ "pitcher": "Hamels",
+"date":          15845,
+"num": 58,
+"avg_speed": 92.80172413793,
+"se_speed": 0.217288066695 
+},
+{
+ "pitcher": "Hamels",
+"date":          15851,
+"num": 79,
+"avg_speed":  91.8835443038,
+"se_speed": 0.2081387696198 
+},
+{
+ "pitcher": "Hamels",
+"date":          15856,
+"num": 45,
+"avg_speed": 92.29333333333,
+"se_speed": 0.2403154492568 
+},
+{
+ "pitcher": "Hamels",
+"date":          15861,
+"num": 63,
+"avg_speed": 92.35873015873,
+"se_speed":  0.14646604979 
+},
+{
+ "pitcher": "Hamels",
+"date":          15867,
+"num": 68,
+"avg_speed": 91.73088235294,
+"se_speed": 0.221924471971 
+},
+{
+ "pitcher": "Hamels",
+"date":          15872,
+"num": 66,
+"avg_speed": 91.32121212121,
+"se_speed": 0.2084632991519 
+},
+{
+ "pitcher": "Hamels",
+"date":          15877,
+"num": 60,
+"avg_speed": 91.47333333333,
+"se_speed": 0.1536351733111 
+},
+{
+ "pitcher": "Hamels",
+"date":          15882,
+"num": 59,
+"avg_speed": 90.82203389831,
+"se_speed": 0.2533477522242 
+},
+{
+ "pitcher": "Hamels",
+"date":          15890,
+"num": 52,
+"avg_speed": 90.92115384615,
+"se_speed": 0.2323455152353 
+},
+{
+ "pitcher": "Hamels",
+"date":          15895,
+"num": 67,
+"avg_speed": 91.48507462687,
+"se_speed": 0.1477902013202 
+},
+{
+ "pitcher": "Hamels",
+"date":          15900,
+"num": 57,
+"avg_speed":  91.4649122807,
+"se_speed": 0.2334562587237 
+},
+{
+ "pitcher": "Hamels",
+"date":          15906,
+"num": 49,
+"avg_speed": 90.02857142857,
+"se_speed": 0.1822711966155 
+},
+{
+ "pitcher": "Hamels",
+"date":          15912,
+"num": 51,
+"avg_speed":  90.6568627451,
+"se_speed": 0.1797002930145 
+},
+{
+ "pitcher": "Hamels",
+"date":          15918,
+"num": 58,
+"avg_speed": 91.46896551724,
+"se_speed": 0.1917097097288 
+},
+{
+ "pitcher": "Hamels",
+"date":          15924,
+"num": 42,
+"avg_speed": 91.64285714286,
+"se_speed": 0.1695160446616 
+},
+{
+ "pitcher": "Hamels",
+"date":          15929,
+"num": 49,
+"avg_speed": 91.02653061224,
+"se_speed": 0.216098985063 
+},
+{
+ "pitcher": "Hamels",
+"date":          15935,
+"num": 68,
+"avg_speed": 91.00735294118,
+"se_speed": 0.1972519299401 
+},
+{
+ "pitcher": "Hamels",
+"date":          15940,
+"num": 46,
+"avg_speed": 91.80434782609,
+"se_speed": 0.1998539689516 
+},
+{
+ "pitcher": "Hamels",
+"date":          15945,
+"num": 71,
+"avg_speed": 90.88028169014,
+"se_speed": 0.1664593982351 
+},
+{
+ "pitcher": "Hamels",
+"date":          15950,
+"num": 37,
+"avg_speed": 90.35945945946,
+"se_speed": 0.2109772577677 
+},
+{
+ "pitcher": "Hamels",
+"date":          15956,
+"num": 48,
+"avg_speed":           91.4,
+"se_speed": 0.1621279155263 
+},
+{
+ "pitcher": "Hamels",
+"date":          15962,
+"num": 45,
+"avg_speed": 91.63333333333,
+"se_speed": 0.1702938636593 
+},
+{
+ "pitcher": "Hamels",
+"date":          15968,
+"num": 68,
+"avg_speed": 90.43088235294,
+"se_speed": 0.1485111559639 
+},
+{
+ "pitcher": "Hamels",
+"date":          15973,
+"num": 65,
+"avg_speed": 91.55846153846,
+"se_speed": 0.1748473552363 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15799,
+"num": 10,
+"avg_speed":          92.09,
+"se_speed": 0.2709858544894 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15804,
+"num": 3,
+"avg_speed":           91.9,
+"se_speed": 0.3511884584284 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15811,
+"num": 16,
+"avg_speed":        90.1625,
+"se_speed": 0.3308921022529 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15816,
+"num": 6,
+"avg_speed": 90.76666666667,
+"se_speed": 0.2564717874889 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15832,
+"num": 10,
+"avg_speed":          91.63,
+"se_speed": 0.2936551265232 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15837,
+"num": 13,
+"avg_speed":           89.8,
+"se_speed": 0.3258125936084 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15843,
+"num": 2,
+"avg_speed":          90.45,
+"se_speed":           0.85 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15849,
+"num": 12,
+"avg_speed": 91.15833333333,
+"se_speed": 0.4165984792691 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15862,
+"num": 1,
+"avg_speed":           90.5,
+"se_speed": null 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15867,
+"num": 9,
+"avg_speed": 91.23333333333,
+"se_speed": 0.4758034141207 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15872,
+"num": 10,
+"avg_speed":          90.33,
+"se_speed": 0.4681049265092 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15877,
+"num": 3,
+"avg_speed": 89.76666666667,
+"se_speed": 1.585699985636 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15882,
+"num": 11,
+"avg_speed": 91.18181818182,
+"se_speed": 0.2350312094627 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15889,
+"num": 22,
+"avg_speed":          91.55,
+"se_speed": 0.1520067781583 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15894,
+"num": 6,
+"avg_speed": 90.36666666667,
+"se_speed": 0.697455693535 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15899,
+"num": 6,
+"avg_speed":          90.95,
+"se_speed": 0.3432686023121 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15909,
+"num": 9,
+"avg_speed": 92.42222222222,
+"se_speed": 0.1977496858951 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15916,
+"num": 7,
+"avg_speed": 90.18571428571,
+"se_speed": 0.4527316936051 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15921,
+"num": 5,
+"avg_speed":          90.84,
+"se_speed": 0.3828837943815 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15927,
+"num": 1,
+"avg_speed":           91.2,
+"se_speed": null 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15934,
+"num": 15,
+"avg_speed": 91.50666666667,
+"se_speed": 0.1826958614139 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15940,
+"num": 4,
+"avg_speed":          90.55,
+"se_speed": 0.322748612184 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15944,
+"num": 15,
+"avg_speed":          91.72,
+"se_speed": 0.371509148769 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15959,
+"num": 2,
+"avg_speed":          89.85,
+"se_speed":           0.35 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15962,
+"num": 2,
+"avg_speed":           90.6,
+"se_speed":            0.1 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15965,
+"num": 5,
+"avg_speed":           91.9,
+"se_speed":  0.30166206258 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15966,
+"num": 2,
+"avg_speed":          90.15,
+"se_speed":           0.75 
+},
+{
+ "pitcher": "Hernandez",
+"date":          15967,
+"num": 4,
+"avg_speed":         88.075,
+"se_speed": 0.4289036410819 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15849,
+"num": 60,
+"avg_speed": 89.22166666667,
+"se_speed": 0.1093403866403 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15864,
+"num": 2,
+"avg_speed":          86.25,
+"se_speed":           0.95 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15870,
+"num": 10,
+"avg_speed":          88.49,
+"se_speed": 0.1649579070888 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15881,
+"num": 4,
+"avg_speed":          90.05,
+"se_speed": 0.5330728530573 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15886,
+"num": 1,
+"avg_speed":           89.8,
+"se_speed": null 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15892,
+"num": 4,
+"avg_speed":           87.4,
+"se_speed": 0.5715476066494 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15897,
+"num": 6,
+"avg_speed": 88.13333333333,
+"se_speed": 0.3593203460856 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15911,
+"num": 5,
+"avg_speed":          87.72,
+"se_speed": 0.3720215047548 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15917,
+"num": 2,
+"avg_speed":             87,
+"se_speed":            0.9 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15928,
+"num": 1,
+"avg_speed":           89.5,
+"se_speed": null 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15934,
+"num": 3,
+"avg_speed":           88.1,
+"se_speed": 0.6928203230275 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15939,
+"num": 8,
+"avg_speed":         86.875,
+"se_speed": 0.2650808502002 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15949,
+"num": 2,
+"avg_speed":          85.95,
+"se_speed":           0.45 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15955,
+"num": 40,
+"avg_speed":        90.0875,
+"se_speed": 0.2411826496928 
+},
+{
+ "pitcher": "Kendrick",
+"date":          15961,
+"num": 2,
+"avg_speed":          85.35,
+"se_speed":           0.05 
+} 
+]
+  
+      var data = d3.nest()
+        .key(function(d){
+          return opts.group === undefined ? 'main' : d[opts.group]
+        })
+        .entries(data)
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .x(function(d) { return d[opts.x] })
+          .y(function(d) { return d[opts.y] })
+          .width(opts.width)
+          .height(opts.height)
+         
+        chart
+  .useInteractiveGuideline(true)
+  .forceY([     85,     95 ])
+  .margin({
+ "left":    100 
+})
+          
+        chart.xAxis
+  .tickFormat(function(d) {return d3.time.format('%b %Y')(new Date( d * 86400000 ));})
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+      
+      //add our title with html
+      //might be better with svg
+      d3.select("#" + opts.id).insert("h3","svg")
+        .text(opts.title);
+        //if desired, could change styling with css or with d3
+        //some examples here http://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/
+        //will use example
+        //.style("float","right");
+        //.style("text-shadow", "0 -1px 1px rgba(0,0,0,0.4)")
+        //.style("font-size","22px")
+        //.style("line-height", "40px")
+        //.style("color", "#355681")
+        //.style("ext-transform", "uppercase")
+        //.style("border-bottom", "1px solid rgba(53,86,129, 0.3)");
+    };
+</script>
+    
+    <script></script>    
+  </body>
+</html>
