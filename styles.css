@@ -8,7 +8,7 @@ footer {
 	text-align: center;
 }
 #section {
-  padding: 5px;
+  padding: 10px;
   box-shadow: 1px 1px 5px 5px #ccc;
   margin-top: 25px;
 }
@@ -20,8 +20,9 @@ footer {
   border-bottom: 0px;
   color: #29467F;
 }
-footer {
-  text-align: center;
+.sidebar.affix {
+  position: fixed;
+  top: 80px;
 }
 
 /* words */
