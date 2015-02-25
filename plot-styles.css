@@ -25,3 +25,10 @@ div.tooltip {
   pointer-events: none;         
 }
 
+/* text on plots */
+svg text {
+  font-family: sans-serif;
+  font-size: 11px;
+  fill: white;
+  text-anchor: middle;
+}
