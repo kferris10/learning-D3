@@ -1,17 +1,25 @@
 
+/* text on plots */
+#bar-labels {
+  font-family: sans-serif;
+  font-size: 11px;
+  fill: white;
+  text-anchor: middle;
+}
+
 /* axes */
-.axis path, 
-.axis line {
+svg .axis path, 
+svg .axis line {
 	fill: none;
 	stroke: black; 
 	shape-rendering: crispEdges;
 }
-.axis text {
+svg .axis text {
 	font-family: sans-serif;
 	font-size: 11px;
 }
 
-/* tooltips */
+/* tooltips 
 div.tooltip {   
   position: absolute;           
   text-align: center;           
@@ -24,4 +32,15 @@ div.tooltip {
   border-radius: 8px;           
   pointer-events: none;         
 }
+*/
 
+/* highlighting on mouseover */
+rect:hover {
+  fill: orange;
+}
+rect {
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
