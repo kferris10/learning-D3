@@ -1,5 +1,5 @@
 // plot parameters
-var w = 750;
+var w = 550;
 var h = 550;
 var padding = 40;
 var text_padding = padding / 2;
