@@ -54,21 +54,65 @@ svg.append("g")
 	.attr("transform", "translate(" + padding + ", 0)")
 	.call(yAxis);
 
-// on click, change fill
+// on click, add a bar
 d3.select("#week8").select("#add-week8")
 	.on("click", function() {
-		alert("Hey, that plot should change!");
 
 		// adding a new row
 		var newNumber = Math.floor(Math.random() * 25);
-		dataset1.push([{ key: 10, value: newNumber }]);
-		xScale.domain(d3.range(dataset.length));
+		dataset1.push({ key: 10, value: newNumber });
+		xScale.domain(d3.range(dataset1.length));
 
-		svg.selectAll("rect")
-			.data(dataset2)
-			.attr("y", function(d) {return yScale(d.value); })
-			.attr("height", function(d) { return h - yScale(d.value) - padding; });
+		// select rectangles
+		var bars = svg.selectAll("rect")
+			.data(dataset1);
+		// enter new data
+		bars.enter()
+			.append("rect")
+			.attr("x", w)
+			.attr("y", function(d) { return yScale(d.value); })
+			.attr("width", xScale.rangeBand())
+			.attr("height", function(d) { return h - yScale(d.value) - padding; })
+			.attr("stroke", "green")
+			.attr("fill", "white");
+		// update plot to bring in new data
+		bars.transition()
+			.duration(500)
+			.attr("x", function(d, i) { return xScale(i); })
+			.attr("y", function(d) { return yScale(d.value); });
 	});
 
+// on click, remove a bar
+d3.select("#week8").select("#delete-week8")
+	.on("click", function() {
 
+		// removing one row
+		dataset1.pop();
+		xScale.domain(d3.range(dataset1.length));
 
+		// select rectanges
+		var bars = svg.selectAll("rect")
+			.data(dataset1);
+		// enter new data
+		bars.enter()
+			.append("rect")
+			.attr("x", w)
+			.attr("y", function(d) { return yScale(d.value); })
+			.attr("width", xScale.rangeBand())
+			.attr("height", function(d) { return h - yScale(d.value) - padding; })
+			.attr("stroke", "green")
+			.attr("fill", "white");
+		// update plot to reflect new data
+		bars.transition()
+			.duration(500)
+			.attr("x", function(d, i) { return xScale(i); })
+			.attr("y", function(d) { return yScale(d.value); })
+			.attr("width", xScale.rangeBand())
+			.attr("height", function(d) { return h - yScale(d.value) - padding; });
+		// exit the first bar
+		bars.exit()
+			.transition()
+			.duration(500)
+			.attr("x", w)
+			.remove();
+	});
