@@ -54,33 +54,65 @@ svg.append("g")
 	.attr("transform", "translate(" + padding + ", 0)")
 	.call(yAxis);
 
-// on click, change fill
+// on click, add a bar
 d3.select("#week8").select("#add-week8")
 	.on("click", function() {
-		alert("Hey, that plot should change!");
 
-		var dataset2 = [ 
-			{ key: 0, value: 9}, 
-			{ key: 1, value: 2}, 
-			{ key: 2, value: 13}, 
-			{ key: 3, value: 19}, 
-			{ key: 4, value: 21}, 
-			{ key: 5, value: 13}, 
-			{ key: 6, value: 22}, 
-			{ key: 7, value: 18}, 
-			{ key: 8, value: 15}, 
-			{ key: 9, value: 13}  
-		];
+		// adding a new row
+		var newNumber = Math.floor(Math.random() * 25);
+		dataset1.push({ key: 10, value: newNumber });
+		xScale.domain(d3.range(dataset1.length));
 
-		svg.selectAll("text")
-			.data(dataset2)
-			.enter()
-			.append("text")
-			.text(function(d) { return d.value; })
-			.attr("x", function(d, i) { return xScale(i) + xScale.rangeBand() / 2; })
-			.attr("y", function(d) { return h - yScale(d.value) + text_padding; })
-			.attr("stroke", "purple");
+		// select rectangles
+		var bars = svg.selectAll("rect")
+			.data(dataset1);
+		// enter new data
+		bars.enter()
+			.append("rect")
+			.attr("x", w)
+			.attr("y", function(d) { return yScale(d.value); })
+			.attr("width", xScale.rangeBand())
+			.attr("height", function(d) { return h - yScale(d.value) - padding; })
+			.attr("stroke", "green")
+			.attr("fill", "white");
+		// update plot to bring in new data
+		bars.transition()
+			.duration(500)
+			.attr("x", function(d, i) { return xScale(i); })
+			.attr("y", function(d) { return yScale(d.value); });
 	});
 
+// on click, remove a bar
+d3.select("#week8").select("#delete-week8")
+	.on("click", function() {
 
+		// removing one row
+		dataset1.pop();
+		xScale.domain(d3.range(dataset1.length));
 
+		// select rectanges
+		var bars = svg.selectAll("rect")
+			.data(dataset1);
+		// enter new data
+		bars.enter()
+			.append("rect")
+			.attr("x", w)
+			.attr("y", function(d) { return yScale(d.value); })
+			.attr("width", xScale.rangeBand())
+			.attr("height", function(d) { return h - yScale(d.value) - padding; })
+			.attr("stroke", "green")
+			.attr("fill", "white");
+		// update plot to reflect new data
+		bars.transition()
+			.duration(500)
+			.attr("x", function(d, i) { return xScale(i); })
+			.attr("y", function(d) { return yScale(d.value); })
+			.attr("width", xScale.rangeBand())
+			.attr("height", function(d) { return h - yScale(d.value) - padding; });
+		// exit the first bar
+		bars.exit()
+			.transition()
+			.duration(500)
+			.attr("x", w)
+			.remove();
+	});
