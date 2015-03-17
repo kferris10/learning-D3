@@ -59,27 +59,15 @@ d3.select("#week8").select("#add-week8")
 	.on("click", function() {
 		alert("Hey, that plot should change!");
 
-		var dataset2 = [ 
-			{ key: 0, value: 9}, 
-			{ key: 1, value: 2}, 
-			{ key: 2, value: 13}, 
-			{ key: 3, value: 19}, 
-			{ key: 4, value: 21}, 
-			{ key: 5, value: 13}, 
-			{ key: 6, value: 22}, 
-			{ key: 7, value: 18}, 
-			{ key: 8, value: 15}, 
-			{ key: 9, value: 13}  
-		];
+		// adding a new row
+		var newNumber = Math.floor(Math.random() * 25);
+		dataset1.push([{ key: 10, value: newNumber }]);
+		xScale.domain(d3.range(dataset.length));
 
-		svg.selectAll("text")
+		svg.selectAll("rect")
 			.data(dataset2)
-			.enter()
-			.append("text")
-			.text(function(d) { return d.value; })
-			.attr("x", function(d, i) { return xScale(i) + xScale.rangeBand() / 2; })
-			.attr("y", function(d) { return h - yScale(d.value) + text_padding; })
-			.attr("stroke", "purple");
+			.attr("y", function(d) {return yScale(d.value); })
+			.attr("height", function(d) { return h - yScale(d.value) - padding; });
 	});
 
 
