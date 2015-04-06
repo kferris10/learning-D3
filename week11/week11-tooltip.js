@@ -11,8 +11,14 @@ var svg11 = d3.select("body").select("#week11-tooltip")
 	.attr("height", h);
 
 // data
-var tooltip_data = [];
-d3.csv("tooltip-data.csv", function(data) { dataset=data });
+var tooltip_data = d3.csv("example.csv", function(d) {
+  return {
+    x: +d.X,
+    y: +d.Y
+  };
+}, function(error, rows) {
+  console.log(rows);
+});
 /*
 
 // scales
