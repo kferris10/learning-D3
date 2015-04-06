@@ -28,15 +28,15 @@ var yscale = d3.scale.linear()
 	.range([h - padding, padding]);
 
 // drawing the circles
-svg.selectAll("circle")
-	.data(tooltip_data)
-	.enter()
-	.append("circle")
-	.attr("cx", function(d) { return xscale(d.x); })
-	.attr("cy", function(d) { return yscale(d.y); })
-	.attr("r", function(d) { return d.x; })
-	.attr("fill", "teal")
-	.attr("stroke", "orange");
+svg11.selectAll("circle")
+	 .data(tooltip_data)
+	 .enter()
+	 .append("circle")
+	 .attr("cx", function(d) { return xscale(d.x); })
+	 .attr("cy", function(d) { return yscale(d.y); })
+	 .attr("r", function(d) { return d.x; })
+	 .attr("fill", "teal")
+	 .attr("stroke", "orange");
 
 // tooltips
 
