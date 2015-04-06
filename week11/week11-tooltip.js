@@ -12,8 +12,8 @@ var svg11 = d3.select("body").select("#week11-tooltip")
 
 // data
 var tooltip_data = [];
-d3.csv("week11/tooltip-data.csv", function(d) {
-	tooltip_data = d;
+d3.csv("week11/tooltip-data.csv", function(data) {
+  dataset = data.map(function(d) { return [ +d["X"], +d["Y"] ]; });
 });
 
 // scales
@@ -33,7 +33,7 @@ svg11.selectAll("circle")
 	 .append("circle")
 	 .attr("cx", function(d) { return xscale(d.X); })
 	 .attr("cy", function(d) { return yscale(d.Y); })
-	 .attr("r", function(d) { return d.X; })
+	 .attr("r", function(d) { return xcale(d.X); })
 	 .attr("fill", "teal")
 	 .attr("stroke", "orange");
 
