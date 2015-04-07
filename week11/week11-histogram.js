@@ -4,7 +4,7 @@ var margin = {top: 10, right: 30, bottom: 30, left: 30},
     height = 450 - margin.top - margin.bottom;
 
 // initialize plot
-var svg = d3.select("body").select("#week11-histogram")
+var svg11_histogram = d3.select("body").select("#week11-histogram")
 	.append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -13,28 +13,41 @@ var svg = d3.select("body").select("#week11-histogram")
 
 // scales
 var x = d3.scale.linear()
-    .domain([0, 1])
+    .domain([0, 3])
     .range([0, width]);
 
 // data
 var values = d3.range(1000).map(d3.random.normal());
 var data11_histogram = d3.layout.histogram()
-    .bins(x.ticks(20))
+    .bins(x.ticks(30))
     (values);
 
 var y = d3.scale.linear()
 	.domain([0, d3.max(data11_histogram, function(d) { return d.y; }) ])
 	.range([height, 0]);
 
+// axes
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
 // draw bars
-var bar = svg.selectAll(".bar")
+var bar = svg11_histogram.selectAll(".bar")
     .data(data11_histogram)
 	.enter().append("g")
     .attr("class", "bar")
-    .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; });
+    .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; })
+    .attr("fill", "lightgreen")
+    .attr("stroke", "darkred");
 
 bar.append("rect")
     .attr("x", 1)
     .attr("width", x(data11_histogram[0].dx) - 1)
     .attr("height", function(d) { return height - y(d.y); });
+
+// add axes
+svg11_histogram.append("g")
+    .attr("class", "axis")
+        .attr("transform", "translate(0," + (height) + ")")
+    .call(xAxis);
 
