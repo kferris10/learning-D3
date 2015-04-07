@@ -63,3 +63,7 @@ hr {
 }
 
 
+/* leaflet maps */
+#map { 
+  height: 400px; 
+}
