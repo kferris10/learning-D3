@@ -11,10 +11,16 @@ var svg11 = d3.select("body").select("#week11-tooltip")
 	.attr("height", h);
 
 // data
-var tooltip_data = [];
-d3.csv("week11/tooltip-data.csv", function(d) {
-	tooltip_data = d;
+var tooltip_data;
+d3.csv("week11/tooltip-data.csv", function(data) {
+	data.forEach(function (d) {
+    	d.X = +d.X;
+		d.Y = +d.Y });
+	// passing data to tooltip_data object
+  	tooltip_data = data;
 });
+/*var tooltip_data = [ {X: 5, Y: 20}, {X: 10, Y: 40}];*/
+
 
 // scales
 var xscale = d3.scale.linear()
@@ -25,6 +31,10 @@ var yscale = d3.scale.linear()
 	.domain([ d3.min(tooltip_data, function(d) { return d.Y; }), 
 			  d3.max(tooltip_data, function(d) { return d.Y; }) ])
 	.range([h - padding, padding]);
+var rscale = d3.scale.linear()
+	.domain([ d3.min(tooltip_data, function(d) { return d.X; }), 
+			  d3.max(tooltip_data, function(d) { return d.X; }) ])
+	.range([5, 20]);
 
 // drawing the circles
 svg11.selectAll("circle")
@@ -33,9 +43,10 @@ svg11.selectAll("circle")
 	 .append("circle")
 	 .attr("cx", function(d) { return xscale(d.X); })
 	 .attr("cy", function(d) { return yscale(d.Y); })
-	 .attr("r", function(d) { return d.X; })
+	 .attr("r", function(d) { return rscale(d.X); })
 	 .attr("fill", "teal")
 	 .attr("stroke", "orange");
 
 // tooltips
+
 
