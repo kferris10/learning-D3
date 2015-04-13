@@ -11,16 +11,17 @@ var svg11_histogram = d3.select("body").select("#week11-histogram")
   	.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var values = d3.range(1000).map(d3.random.normal());
 // scales
 var x = d3.scale.linear()
-    .domain([0, 3])
+    .domain(d3.extent(values))
     .range([0, width]);
 
 // data
-var values = d3.range(1000).map(d3.random.normal());
 var data11_histogram = d3.layout.histogram()
     .bins(x.ticks(30))
     (values);
+var numbins = data11_histogram.length;
 
 var y = d3.scale.linear()
 	.domain([0, d3.max(data11_histogram, function(d) { return d.y; }) ])
@@ -42,7 +43,7 @@ var bar = svg11_histogram.selectAll(".bar")
 
 bar.append("rect")
     .attr("x", 1)
-    .attr("width", x(data11_histogram[0].dx) - 1)
+    .attr("width", data11_histogram[0].dx*10)
     .attr("height", function(d) { return height - y(d.y); });
 
 // add axes
