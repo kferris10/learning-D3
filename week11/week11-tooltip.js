@@ -11,8 +11,8 @@ var svg11 = d3.select("body").select("#week11-tooltip")
 	.attr("height", h);
 
 // data
-var tooltip_data;
 /*
+var tooltip_data;
 d3.csv("week11/tooltip-data.csv", function(data) {
 	data.forEach(function (d) {
     	d.X = +d.X;
@@ -24,9 +24,11 @@ d3.csv("week11/tooltip-data.csv", function(data) {
 var tooltip_data = [ {X: 5, Y: 20}, {X: 10, Y: 40}];
 
 
+var xmin = d3.min(tooltip_data, function(d) { return d.X; });
+
 // scales
 var xscale = d3.scale.linear()
-	.domain([ d3.min(tooltip_data, function(d) { return d.X; }), 
+	.domain([ xmin, 
 			  d3.max(tooltip_data, function(d) { return d.X; }) ])
 	.range([padding, w - padding]);
 var yscale = d3.scale.linear()
