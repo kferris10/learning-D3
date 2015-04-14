@@ -48,13 +48,15 @@ d3.csv("week12/single-mean.csv", function(data) {
 
 	// x axis
 	xAxis.scale(xscale12)
-	svg.append("g")
+	svg12.append("g")
 		.attr("class", "axis")
+		.attr("transform", "traslate(0," + (height12 - padding12) + ")")
 		.call(xAxis);
 	// y axis
 	yAxis.scale(yscale12)
-	svg.append("g")
+	svg12.append("g")
 		.attr("class", "axis")
+		.attr("transform", "traslate(" + 100 + ",0)")
 		.call(yAxis);
 
 	// adding tooltips
