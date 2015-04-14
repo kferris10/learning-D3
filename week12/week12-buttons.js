@@ -59,11 +59,18 @@ d3.csv("week12/single-mean.csv", function(data) {
 		.attr("transform", "traslate(" + 100 + ",0)")
 		.call(yAxis);
 
-	// adding tooltips
-	// svg12.append("text")
+	// adding interactivity with buttons
+	d3.select("#week12").select("#single-mean")
+		.on("click", function() {
+			alert("You clicked me")
+		})
 
 
 });
+
+var anova_click = function() {
+	alert("you clicked me")
+};
 
 
 	/*
