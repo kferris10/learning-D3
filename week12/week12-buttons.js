@@ -98,15 +98,22 @@ d3.select("#week12").select("#one-way-anova")
 var x_transition = function(data) {
 	// updating xscale
 	xscale12.domain([
-			d3.min(data, function(d) { return d.x; }), 
-			d3.max(data, function(d) { return d.x; })
+			d3.min(data, function(d) { return d.x - .01; }), 
+			d3.max(data, function(d) { return d.x + .01; })
 		]);
+
 
 	// updating circles
 	svg12.selectAll("circle")
-		.data(one_way_anova)
+		.data(data)
 		.transition()
 		.duration(4000)
 		.ease("elastic")
 		.attr("cx", function(d) { return xscale12(d.x); });
+
+	// update the x axis
+	xAxis12.scale(xscale12);
+	svg12.select(".x.axis")
+		.transition()
+		.call(xAxis12)
 }
