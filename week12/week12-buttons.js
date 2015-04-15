@@ -14,8 +14,8 @@ var xscale12 = d3.scale.linear().range([2 * padding12, width12 - 2 * padding12])
 var yscale12 = d3.scale.linear().range([height12-padding12, padding12]);
 
 // axes
-var xAxis = d3.svg.axis().orient("bottom");
-var yAxis = d3.svg.axis().orient("left");
+var xAxis12 = d3.svg.axis().orient("bottom");
+var yAxis12 = d3.svg.axis().orient("left");
 
 // data
 var single_mean;
@@ -47,6 +47,18 @@ d3.csv("week12/single-mean.csv", function(data) {
 		.attr("cx", function(d) { return xscale12(d.x); })
 		.attr("cy", function(d) { return yscale12(d.y); })
 		.attr("r", 4);
+
+	// drawing axes
+	xAxis12.scale(xscale12);
+	svg12.append("g")
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + (height12 - padding12) + ")")
+		.call(xAxis12);
+	yAxis12.scale(yscale12);
+	svg12.append("g")
+		.attr("class", "y axis")
+		.attr("transform", "translate(" + (2 * padding12) + ",0)")
+		.call(yAxis12);
 });
 
 // transition to single mean data
@@ -59,20 +71,8 @@ d3.select("#week12").select("#single-mean")
 			// passing data to one_way_anova object
 		  	single_mean = data;
 
-		  	// updating xscale
-			xscale12.domain([
-					d3.min(single_mean, function(d) { return d.x - .01; }), 
-					d3.max(single_mean, function(d) { return d.x + .01; })
-				]);
-
-			// updating circles
-			svg12.selectAll("circle")
-				.data(single_mean)
-				.transition()
-				.duration(5000)
-				.ease("elastic")
-				.attr("cx", function(d){ return xscale12(d.x); });
-
+		  	// transition to new data
+			x_transition(single_mean);
 		})
 	});
 
@@ -94,6 +94,7 @@ d3.select("#week12").select("#one-way-anova")
 
 	});
 
+// function to transition from one dataset to the next
 var x_transition = function(data) {
 	// updating xscale
 	xscale12.domain([
