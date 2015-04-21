@@ -10,8 +10,11 @@ var svg12 = d3.select("body").select("#week12-buttons")
 	.attr("height", height12);
 
 // scales
-var xscale12 = d3.scale.linear().range([2 * padding12, width12 - 2 * padding12]);
-var yscale12 = d3.scale.linear().range([height12-padding12, padding12]);
+var xscale12 = d3.scale.ordinal()
+	.domain([1])
+	.rangeRoundBands([2 * padding12, width12 - 2 * padding12], .05);
+var yscale12 = d3.scale.linear()
+	.range([height12-padding12, padding12]);
 
 // axes
 var xAxis12 = d3.svg.axis().orient("bottom");
@@ -30,10 +33,6 @@ d3.csv("week12/single-mean.csv", function(data) {
   	single_mean = data;
 
 	// updating scales
-	xscale12.domain([
-			d3.min(single_mean, function(d) { return d.x - .01; }), 
-			d3.max(single_mean, function(d) { return d.x + .01; })
-		]);
 	yscale12.domain([
 			d3.min(single_mean, function(d) { return d.y; }), 
 			d3.max(single_mean, function(d) { return d.y; })
@@ -88,6 +87,10 @@ d3.select("#week12").select("#one-way-anova")
 			// passing data to one_way_anova object
 		  	one_way_anova = data;
 
+		  	xscale12.domain(
+		  		d3.range(d3.max(one_way_anova, function(d) { return d.x; }))
+		  	);
+
 		  	// transition to new data
 			x_transition(one_way_anova);
 		});
@@ -97,11 +100,6 @@ d3.select("#week12").select("#one-way-anova")
 // function to transition from one dataset to the next
 var x_transition = function(data) {
 	// updating xscale
-	xscale12.domain([
-			d3.min(data, function(d) { return d.x - .01; }), 
-			d3.max(data, function(d) { return d.x + .01; })
-		]);
-
 
 	// updating circles
 	svg12.selectAll("circle")
