@@ -12,7 +12,8 @@ var svg12 = d3.select("body").select("#week12-buttons")
 // scales
 var xscale12 = d3.scale.ordinal()
 	.domain([1])
-	.rangeRoundBands([2 * padding12, width12 - 2 * padding12], .05);
+	.rangePoints([3 * padding12, width12 - 3 * padding12]);
+	//.rangeRoundBands([2 * padding12, width12 - 2 * padding12], .05);
 var yscale12 = d3.scale.linear()
 	.range([height12-padding12, padding12]);
 
@@ -92,7 +93,8 @@ d3.select("#week12_15").select("#one-way-anova")
 
 		  	// setting x scale
 		  	xscale12.domain(
-		  		d3.range(d3.max(one_way_anova, function(d) { return d.x; }))
+		  		// cheesy way to do this
+		  		d3.range(1, d3.max(one_way_anova, function(d) { return d.x+1; }))
 		  	);
 
 		  	// transition to new data
