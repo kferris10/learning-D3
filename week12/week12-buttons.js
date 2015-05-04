@@ -70,6 +70,9 @@ d3.select("#week12_15").select("#single-mean")
 			// passing data to one_way_anova object
 		  	single_mean = data;
 
+		  	// resetting scale
+		  	xscale12.domain([1]);
+
 		  	// transition to new data
 			x_transition(single_mean);
 		})
@@ -87,6 +90,7 @@ d3.select("#week12_15").select("#one-way-anova")
 			// passing data to one_way_anova object
 		  	one_way_anova = data;
 
+		  	// setting x scale
 		  	xscale12.domain(
 		  		d3.range(d3.max(one_way_anova, function(d) { return d.x; }))
 		  	);
