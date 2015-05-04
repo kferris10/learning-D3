@@ -61,7 +61,7 @@ d3.csv("week12/single-mean.csv", function(data) {
 });
 
 // transition to single mean data
-d3.select("#week12").select("#single-mean")
+d3.select("#week12_15").select("#single-mean")
 	.on("click", function() {
 		d3.csv("week12/single-mean.csv", function(data) {
 			data.forEach(function (d) {
@@ -76,7 +76,7 @@ d3.select("#week12").select("#single-mean")
 	});
 
 // transition to one-way anova data
-d3.select("#week12").select("#one-way-anova")
+d3.select("#week12_15").select("#one-way-anova")
 	.on("click", function() {
 
 		// one-way-anova data
