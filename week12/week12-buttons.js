@@ -9,6 +9,9 @@ var svg12 = d3.select("body").select("#week12-buttons")
 	.attr("width", width12)
 	.attr("height", height12);
 
+// colors of points
+var color = d3.scale.category10();
+
 // scales
 var xscale12 = d3.scale.ordinal()
 	.domain([1])
@@ -33,6 +36,9 @@ d3.csv("week12/single-mean.csv", function(data) {
 	// passing data to single_mean object
   	single_mean = data;
 
+  	//setting colors
+	color.domain(d3.keys(single_mean[0]).filter(function(key) { return key !== "x"; }));
+
 	// updating scales
 	yscale12.domain([
 			d3.min(single_mean, function(d) { return d.y; }), 
@@ -44,6 +50,7 @@ d3.csv("week12/single-mean.csv", function(data) {
 		.data(single_mean)
 		.enter()
 		.append("circle")
+		.attr("fill", function(d) { return color(d.x); })
 		.attr("cx", function(d) { return xscale12(d.x); })
 		.attr("cy", function(d) { return yscale12(d.y); })
 		.attr("r", 4);
@@ -105,7 +112,7 @@ d3.select("#week12_15").select("#one-way-anova")
 
 // function to transition from one dataset to the next
 var my_transition = function(data) {
-	// updating xscale
+	color.domain(d3.keys(data[0]).filter(function(key) { return key !== "x"; }));
 
 	// updating circles
 	svg12.selectAll("circle")
@@ -113,6 +120,7 @@ var my_transition = function(data) {
 		.transition()
 		.duration(6000)
 		.ease("elastic")
+		.attr("fill", function(d) { return color(d.x); })
 		.attr("cx", function(d) { return xscale12(d.x); })
 		.attr("cy", function(d) { return yscale12(d.y); });
 
