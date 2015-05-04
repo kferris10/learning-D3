@@ -75,7 +75,7 @@ d3.select("#week12_15").select("#single-mean")
 		  	xscale12.domain([1]);
 
 		  	// transition to new data
-			x_transition(single_mean);
+			my_transition(single_mean);
 		})
 	});
 
@@ -98,22 +98,23 @@ d3.select("#week12_15").select("#one-way-anova")
 		  	);
 
 		  	// transition to new data
-			x_transition(one_way_anova);
+			my_transition(one_way_anova);
 		});
 
 	});
 
 // function to transition from one dataset to the next
-var x_transition = function(data) {
+var my_transition = function(data) {
 	// updating xscale
 
 	// updating circles
 	svg12.selectAll("circle")
 		.data(data)
 		.transition()
-		.duration(4000)
+		.duration(6000)
 		.ease("elastic")
-		.attr("cx", function(d) { return xscale12(d.x); });
+		.attr("cx", function(d) { return xscale12(d.x); })
+		.attr("cy", function(d) { return yscale12(d.y); });
 
 	// update the x axis
 	xAxis12.scale(xscale12);
